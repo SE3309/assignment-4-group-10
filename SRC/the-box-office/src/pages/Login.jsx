@@ -1,30 +1,44 @@
-// import React from 'react';
-
-// const Login = () => {
-//   return (
-//     <div>
-//       <h2>Login</h2>
-//       <input type="text" placeholder="Username" />
-//       <input type="password" placeholder="Password" />
-//       <button>Login</button>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
 import React, { useState } from 'react';
 import '../styles/login.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(''); 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Username:', username);
-    console.log('Password:', password);
+    setErrorMessage(''); 
+  
+   
+    const userCredentials = { username, password };
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userCredentials),
+      });
+  
+      if (!response.ok) {
+        const errorData = await response.text();
+        throw new Error(errorData);  
+      }
+  
+      const data = await response.json();
+  
+      if (data) {
+        console.log('Login successful:', data);
+        window.location.href = '/home';  //directs the page to home when succesfully logged in.
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setErrorMessage(error.message || 'Something went wrong, please try again.');
+    }
   };
+  
 
   return (
     <div className="login-container">
@@ -52,6 +66,7 @@ const Login = () => {
             required
           />
         </div>
+        {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Display error message */}
         <button type="submit" className="login-btn">Login</button>
         <p className="signup-text">
           Don't have an account? <a href="/signup">Sign up</a>
@@ -60,5 +75,8 @@ const Login = () => {
     </div>
   );
 };
+
+
+
 
 export default Login;

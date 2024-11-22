@@ -1,22 +1,5 @@
-// import React from 'react';
-
-// const Signup = () => {
-//   return (
-//     <div>
-//       <h2>Signup</h2>
-//       <input type="text" placeholder="Username" />
-//       <input type="email" placeholder="email" />
-//       <input type="password" placeholder="Password" />
-
-//       <button>Sign Up</button>
-//     </div>
-//   );
-// };
-
-// export default Signup;
-
 import React, { useState } from 'react';
-import '../styles/signup.css'; 
+import '../styles/signup.css';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -24,15 +7,41 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
       alert('Passwords do not match!');
       return;
     }
-    console.log('Username:', username);
-    console.log('Email:', email);
-    console.log('Password:', password);
+
+    try {
+      
+      const response = await fetch('http://localhost:5000/api/users/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username,
+          email,
+          password,
+        }),
+      });
+
+      if (response.ok) {
+        const message = await response.text();
+        alert(message); 
+       
+        window.location.href = '/login';
+      } else {
+        const errorMessage = await response.text();
+        alert(`Error: ${errorMessage}`);
+      }
+    } catch (error) {
+      console.error('Error during sign up:', error);
+      alert('An error occurred. Please try again later.');
+    }
   };
 
   return (
