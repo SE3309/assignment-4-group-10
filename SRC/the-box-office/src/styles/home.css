@@ -1,0 +1,152 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d9d9d9;
+  }
+  
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 250px; /* Matches the top of the left panel */
+  }
+  
+  /* Navigation Bar */
+  .nav-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #c0baba;
+    border-bottom: 1px solid #b0b0b0;
+  }
+  
+  .search-by {
+    padding: 10px 15px;
+    background-color: #d9d9d9;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 300px;
+  }
+  
+  .search-btn {
+    padding: 10px 15px;
+    background-color: #d9d9d9;
+    border: 1px solid #b0b0b0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .search-btn:hover {
+    background-color: #a6a6a6;
+    color: white;
+  }
+  
+  /* Main Content */
+  .main-content {
+    display: flex;
+    height: calc(100% - 85px); /* Adjust height to account for top margin */
+  }
+  
+  /* Left Panel */
+  .left-panel {
+    width: 18%;
+    background-color: #c0baba;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #b0b0b0;
+    position: fixed;
+    top: 85px;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .profile-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #d9d9d9;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .username {
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+  
+  .nav-item {
+    text-align: center;
+    padding: 10px;
+    background-color: #d9d9d9;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-item:hover {
+    background-color: #a6a6a6;
+    color: white;
+  }
+  
+  /* Main Panel */
+  .main-panel {
+    margin-left: 18%;
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  .recommendations {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #b0b0b0;
+    width: calc(100% - 40px); /* 20px margin on each side */
+    margin: 0 auto;
+  }
+  
+  .recommendations h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .recommendations-content {
+    height: 200px;
+    border: 1px solid #b0b0b0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+  }
+  
