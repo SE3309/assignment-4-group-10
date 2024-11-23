@@ -17,9 +17,9 @@ import "../styles/home.css";
 
 const Home = ({ username }) => {
   return (
-    <div className="welcome-container">
+    <div className="home-container">
       {/* Navigation Bar */}
-      <div className="nav-bar">
+      <div className="search-bar">
         <select className="search-by">
           <option value="movie">Movie</option>
           <option value="director">Director</option>
@@ -34,7 +34,6 @@ const Home = ({ username }) => {
         <div className="left-panel">
           <div className="profile-section">
             <button className="profile-btn">Profile</button>
-            <p className="username">Hello! {username}</p>
           </div>
           <nav className="nav-links">
             <Link to="/rate-movie" className="nav-item">Rate A Movie</Link>
