@@ -36,10 +36,10 @@ const Home = ({ username }) => {
             <button className="profile-btn">Profile</button>
           </div>
           <nav className="nav-links">
-            <Link to="/rate-movie" className="nav-item">Rate A Movie</Link>
+            <Link to="/ratemovie" className="nav-item">Rate A Movie</Link>
             <Link to="/watchlist" className="nav-item">Watchlist</Link>
             <Link to="/collections" className="nav-item">Collections</Link>
-            <Link to="/find-friends" className="nav-item">Find Friends</Link>
+            <Link to="/findfriends" className="nav-item">Find Friends</Link>
           </nav>
         </div>
 

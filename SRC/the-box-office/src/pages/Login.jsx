@@ -31,6 +31,7 @@ const Login = () => {
   
       if (data) {
         console.log('Login successful:', data);
+        localStorage.setItem('username', username);
         window.location.href = '/home';  //directs the page to home when succesfully logged in.
       }
     } catch (error) {
