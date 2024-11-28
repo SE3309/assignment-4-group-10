@@ -6,6 +6,7 @@ import Signup from './pages/Signup';
 import WelcomePage from './pages/WelcomePage';
 import Home from './pages/Home';
 import RateMovie from './pages/RateMovie';
+import Reviews from './pages/Reviews';
 
 const App = () => {
   return (
@@ -17,7 +18,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
         <Route path="/ratemovie" element={<RateMovie username="currentUsername"/>} />
-
+        <Route path="/reviews" element={<Reviews username="currentUsername"/>} />
       </Routes>
     </Router>
   );

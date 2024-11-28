@@ -1,16 +1,3 @@
-// import React from 'react';
-
-// const Home = () => {
-//   return (
-//     <div>
-//       <h1>Succesfully Logged in</h1>
-      
-//     </div>
-//   );
-// };
-
-// export default Home;
-
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
@@ -37,6 +24,7 @@ const Home = ({ username }) => {
           </div>
           <nav className="nav-links">
             <Link to="/ratemovie" className="nav-item">Rate A Movie</Link>
+            <Link to="/reviews" className="nav-item">Reviews</Link>
             <Link to="/watchlist" className="nav-item">Watchlist</Link>
             <Link to="/collections" className="nav-item">Collections</Link>
             <Link to="/findfriends" className="nav-item">Find Friends</Link>

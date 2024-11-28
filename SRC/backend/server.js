@@ -4,6 +4,7 @@ const app = express();
 const userRoutes = require('./routes/userRoutes'); 
 const movieRoutes = require('./routes/movieRoutes');
 const reviewsRoutes = require('./routes/reviewsRoutes');
+const viewReviews = require('./routes/viewReviews');
 
 app.use(express.json()); 
 app.use(cors()); 
@@ -12,9 +13,10 @@ app.use(cors());
 app.use('/api/users', userRoutes); 
 app.use(movieRoutes);
 app.use('/api', reviewsRoutes);
+app.use('/api/reviews', viewReviews);
 
 // start the server
-const PORT = 5000;
+const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);
 });

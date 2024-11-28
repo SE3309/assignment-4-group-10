@@ -9,7 +9,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage(''); 
-  
+
+    localStorage.setItem("username", data.user.username);
    
     const userCredentials = { username, password };
   
