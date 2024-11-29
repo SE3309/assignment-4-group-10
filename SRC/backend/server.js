@@ -18,7 +18,7 @@ app.use('/api', reviewsRoutes);
 app.use('/api/reviews', viewReviews);
 
 // start the server
-const PORT = 5001;
+const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);
 });

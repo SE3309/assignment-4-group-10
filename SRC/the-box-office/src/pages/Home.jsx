@@ -36,7 +36,7 @@ const Home = ({ username }) => {
         .split("T")[0];
 
       const response = await fetch(
-        `http://localhost:5002/api/search/details?title=${encodeURIComponent(
+        `http://localhost:5000/api/search/details?title=${encodeURIComponent(
           movie.title
         )}&releaseDate=${encodeURIComponent(formattedDate)}`
       );
