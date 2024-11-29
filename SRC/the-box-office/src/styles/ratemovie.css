@@ -27,6 +27,7 @@ h1 {
   padding: 10px;
   border: 1px solid #b0b0b0;
   border-radius: 8px;
+  color:#333;
 }
 
 .search-btn {
@@ -117,6 +118,7 @@ h1 {
   border: 1px solid #b0b0b0;
   border-radius: 8px;
   width: 98%;
+  color:#333;
 }
 
 .submit-review-btn {
