@@ -4,6 +4,7 @@ const app = express();
 const userRoutes = require('./routes/userRoutes'); 
 const movieRoutes = require('./routes/movieRoutes');
 const reviewsRoutes = require('./routes/reviewsRoutes');
+const searchRoutes = require('./routes/searchRoutes');
 const viewReviews = require('./routes/viewReviews');
 
 app.use(express.json()); 
@@ -12,6 +13,7 @@ app.use(cors());
 // routes
 app.use('/api/users', userRoutes); 
 app.use(movieRoutes);
+app.use(searchRoutes);
 app.use('/api', reviewsRoutes);
 app.use('/api/reviews', viewReviews);
 

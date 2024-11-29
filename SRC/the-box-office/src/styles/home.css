@@ -13,7 +13,12 @@ body {
   height: 70vh;
 }
 
-/* Search Bar Styling */
+/* Search Bar and Results Content */
+
+.search-section {
+  gap: 16px;
+}
+
 .search-bar {
   display: flex;
   justify-content: flex-start;
@@ -68,6 +73,72 @@ body {
   background-color: #a6a6a6;
   color: white;
 }
+
+p {
+  color: white;
+  font-weight: bold;
+}
+
+#filters {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #adc0b1;
+  border-radius: 10px;
+  max-width: 300px;
+  color:#ffffff;}
+
+input {
+  font-size: 16px;
+  color:#ffffff;
+}
+
+input[type="radio"] {
+  accent-color: #28a745;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  flex-direction: row-reverse;
+}
+
+.search-results-section {
+  overflow-y: scroll; 
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  margin: 0 auto;
+  border-radius: 8px;
+  height: 400px;
+  width: 800px;
+}
+
+.movie-details{
+  background-color: #edebeb;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #b0b0b0;
+  width: 800px;
+  margin-left: 300px;
+}
+
+.movie-result-item {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: auto;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
 
 /* Main Content */
 .main-content {
@@ -169,5 +240,7 @@ body {
   align-items: center;
   color: #777;
 }
+
+
 
 
