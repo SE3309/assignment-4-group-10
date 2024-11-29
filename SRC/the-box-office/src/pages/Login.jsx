@@ -10,8 +10,6 @@ const Login = () => {
     e.preventDefault();
     setErrorMessage(''); 
 
-    localStorage.setItem("username", data.user.username);
-   
     const userCredentials = { username, password };
   
     try {
@@ -32,7 +30,7 @@ const Login = () => {
   
       if (data) {
         console.log('Login successful:', data);
-        localStorage.setItem('username', username);
+        localStorage.setItem('username', data.user.username);
         window.location.href = '/home';  //directs the page to home when succesfully logged in.
       }
     } catch (error) {
