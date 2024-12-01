@@ -6,6 +6,8 @@ const movieRoutes = require('./routes/movieRoutes');
 const reviewsRoutes = require('./routes/reviewsRoutes');
 const searchRoutes = require('./routes/searchRoutes');
 const viewReviews = require('./routes/viewReviews');
+const watchlistRoutes = require('./routes/watchlistRoutes');
+const collectionsRoutes = require('./routes/collectionsRoutes');
 
 app.use(express.json()); 
 app.use(cors()); 
@@ -16,6 +18,8 @@ app.use(movieRoutes);
 app.use(searchRoutes);
 app.use('/api', reviewsRoutes);
 app.use('/api/reviews', viewReviews);
+app.use('/api/watchlist', watchlistRoutes);
+app.use('/api/collections', collectionsRoutes);
 
 // start the server
 const PORT = 5000;
