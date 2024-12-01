@@ -1,8 +1,8 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'sqluser',
+  user: 'sqluser1',
   password: 'password',
   database: 'the_box_office'
 });
