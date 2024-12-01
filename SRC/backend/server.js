@@ -8,6 +8,7 @@ const searchRoutes = require('./routes/searchRoutes');
 const viewReviews = require('./routes/viewReviews');
 const watchlistRoutes = require('./routes/watchlistRoutes');
 const collectionsRoutes = require('./routes/collectionsRoutes');
+const recommendationsRoutes = require('./routes/recommendations');
 
 app.use(express.json()); 
 app.use(cors()); 
@@ -20,6 +21,7 @@ app.use('/api', reviewsRoutes);
 app.use('/api/reviews', viewReviews);
 app.use('/api/watchlist', watchlistRoutes);
 app.use('/api/collections', collectionsRoutes);
+app.use('/api', recommendationsRoutes);
 
 // start the server
 const PORT = 5000;

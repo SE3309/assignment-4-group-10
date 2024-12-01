@@ -9,6 +9,7 @@ import RateMovie from './pages/RateMovie';
 import Reviews from './pages/Reviews';
 import Watchlist from './pages/Watchlist';
 import Collections from './pages/Collections';
+import Recommendations from './pages/Reccomendations';
 
 const App = () => {
   return (
@@ -23,6 +24,8 @@ const App = () => {
         <Route path="/reviews" element={<Reviews username="currentUsername"/>} />
         <Route path="/watchlist" element={<Watchlist />} />
         <Route path="/collections" element={<Collections />} />
+        <Route path="/recommendations" element={<Recommendations />} />
+
       </Routes>
     </Router>
   );
