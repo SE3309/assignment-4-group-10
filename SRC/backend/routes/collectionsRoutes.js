@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/db');
+const db = require('../config/db');//
 
 // Create a collection
 router.post('/create', async (req, res) => {
