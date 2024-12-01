@@ -2,44 +2,41 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 
-router.get('/recommendations/:userId', (req, res) => {
-  const userId = req.params.userId;
+// Recommendations route based on username
+router.get('/recommendations/:username', (req, res) => {
+    const username = req.params.username;
 
-  // Fetch top-rated genres or directors by the user
-  const query = `
-    SELECT m.genre, m.director
-    FROM Movies m
-    JOIN Reviews r ON m.id = r.movieId
-    WHERE r.userId = ?
-    ORDER BY r.rating DESC
-    LIMIT 10;
-  `;
+    console.log('Fetching recommendations for username:', username);
 
-  db.query(query, [userId], (err, results) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).json({ error: 'Database query error' });
+    if (!username) {
+        return res.status(400).json({ error: 'Username is required' });
     }
 
-    // Use genres or directors to fetch recommended movies
-    const genres = results.map(row => row.genre);
-    const directors = results.map(row => row.director);
-
-    const recommendationQuery = `
-      SELECT * FROM Movies
-      WHERE genre IN (?) OR director IN (?)
-      LIMIT 10;
+    // Query to fetch recommendations
+    const recommendationsQuery = `
+        SELECT m.title, m.releaseDate, m.duration, m.synopsis
+        FROM movie m
+        JOIN review r ON m.title = r.movieTitle
+        JOIN user u ON r.username = u.username
+        WHERE u.username = ?
+        ORDER BY r.rating DESC
+        LIMIT 10;
     `;
 
-    db.query(recommendationQuery, [genres, directors], (err, recommendations) => {
-      if (err) {
-        console.error(err);
-        return res.status(500).json({ error: 'Database query error' });
-      }
+    db.query(recommendationsQuery, [username], (err, results) => {
+        if (err) {
+            console.error('Database query error:', err);
+            return res.status(500).json({ error: 'Database query error' });
+        }
 
-      res.json(recommendations);
+        if (results.length === 0) {
+            console.log('No recommendations found for username:', username);
+            return res.status(404).json({ error: 'No recommendations found' });
+        }
+
+        console.log('Recommendations fetched successfully:', results);
+        res.json(results);
     });
-  });
 });
 
 module.exports = router;

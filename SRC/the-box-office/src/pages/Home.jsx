@@ -307,6 +307,10 @@ const Home = ({ username }) => {
             <Link to="/findfriends" className="nav-item">
               Find Friends
             </Link>
+            <Link to="/recommendations" className="nav-item">
+              Personalized Recommendations
+            </Link>
+            
           </nav>
         </div>
 
@@ -316,7 +320,7 @@ const Home = ({ username }) => {
             <h2>Personalized Recommendations</h2>
             <div className="recommendations-content">
               {/* Add dynamic content here */}
-              Recommendations will appear here.
+              
             </div>
           </div>
         </div>
