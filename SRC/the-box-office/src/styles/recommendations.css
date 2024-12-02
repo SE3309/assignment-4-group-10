@@ -1,11 +1,35 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto; 
+    min-height: 100%; 
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    font-family: 'Inter', Arial, sans-serif; 
+}
+
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    overflow: visible; 
+}
+
+
 .recommendations-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 0 auto;
+    height: auto; 
 }
+
 
 .recommendations-header {
     font-size: 24px;
@@ -18,16 +42,17 @@
 .recommendations-list {
     list-style-type: none;
     padding: 0;
+    margin: 0; 
 }
 
 .recommendation-item {
     background-color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 15px; 
     padding: 15px;
     border-radius: 8px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column; 
+    align-items: flex-start; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -37,13 +62,43 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
 .recommendation-title {
     font-size: 18px;
     font-weight: bold;
     color: #0077cc;
+    margin-bottom: 10px; 
 }
+
 
 .recommendation-genre {
     font-size: 14px;
     color: #666;
+    margin-bottom: 5px;
+}
+
+
+.recommendation-item:focus {
+    outline: 2px solid #0077cc;
+    outline-offset: 2px;
+}
+
+
+@media (max-width: 768px) {
+    .recommendations-container {
+        padding: 15px;
+        max-width: 95%; 
+    }
+
+    .recommendations-header {
+        font-size: 20px; 
+    }
+
+    .recommendation-title {
+        font-size: 16px;
+    }
+
+    .recommendation-genre {
+        font-size: 12px;
+    }
 }
