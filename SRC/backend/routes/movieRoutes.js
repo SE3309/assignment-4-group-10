@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/db'); // Adjust path to your database config
+const db = require('../config/db'); 
 
 // Route to search for movies
 router.get('/api/movies', (req, res) => {
