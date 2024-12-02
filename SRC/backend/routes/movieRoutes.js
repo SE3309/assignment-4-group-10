@@ -43,4 +43,23 @@ router.get('/api/movies/details', (req, res) => {
     });
 });
   
+
+router.get('/api/movies/recent', (req, res) => {
+    const recentMoviesQuery = `
+SELECT title, releaseDate, duration, synopsis
+FROM movie
+ORDER BY releaseDate DESC
+LIMIT 9;
+    `;
+  
+    db.query(recentMoviesQuery, (err, results) => {
+      if (err) {
+        console.error("Database error:", err);
+        res.status(500).json({ error: "Database error" });
+      } else {
+        res.json(results);
+      }
+    });
+  });
+  
 module.exports = router;
