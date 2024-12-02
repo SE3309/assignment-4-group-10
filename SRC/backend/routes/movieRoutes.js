@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/db'); 
+const db = require('../config/db'); // Adjust path to your database config
 
 // Route to search for movies
 router.get('/api/movies', (req, res) => {
@@ -42,5 +42,24 @@ router.get('/api/movies/details', (req, res) => {
         res.status(200).json(results[0]);
     });
 });
+  
+
+router.get('/api/movies/recent', (req, res) => {
+    const recentMoviesQuery = `
+SELECT title, releaseDate, duration, synopsis
+FROM movie
+ORDER BY releaseDate DESC
+LIMIT 9;
+    `;
+  
+    db.query(recentMoviesQuery, (err, results) => {
+      if (err) {
+        console.error("Database error:", err);
+        res.status(500).json({ error: "Database error" });
+      } else {
+        res.json(results);
+      }
+    });
+  });
   
 module.exports = router;
