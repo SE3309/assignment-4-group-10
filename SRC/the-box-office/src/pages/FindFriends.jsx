@@ -53,22 +53,35 @@ const FindFriends = () => {
           followerUsername: localStorage.getItem("username"), // Current logged-in user
         }),
       });
-
+  
       const data = await response.json();
+  
       if (response.ok) {
+        // Toggle follow state on success
         setSearchResults((prevResults) =>
           prevResults.map((user) =>
             user.username === username ? { ...user, isFollowing: !isFollowing } : user
           )
         );
       } else {
-        setError(data.error || `Failed to ${isFollowing ? "unfollow" : "follow"} the user.`);
+        if (data.error && data.error.includes("already following")) {
+          // If already followed, switch button to "Unfollow" mode
+          setSearchResults((prevResults) =>
+            prevResults.map((user) =>
+              user.username === username ? { ...user, isFollowing: true } : user
+            )
+          );
+        } else {
+          setError(data.error || `Failed to ${isFollowing ? "unfollow" : "follow"} the user.`);
+        }
       }
     } catch (err) {
       console.error(`Error trying to ${isFollowing ? "unfollow" : "follow"} user:`, err);
       setError("Unable to complete the action. Please try again later.");
     }
   };
+  
+  
 
   return (
     <div className="find-friends-container">
