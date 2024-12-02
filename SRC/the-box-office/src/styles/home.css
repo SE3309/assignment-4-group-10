@@ -3,7 +3,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: #4f4e4e;
   display: flex;
-  position: fixed;
   width: 100%;
 }
 

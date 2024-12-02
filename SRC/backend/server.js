@@ -7,7 +7,7 @@ const reviewsRoutes = require('./routes/reviewsRoutes');
 const searchRoutes = require('./routes/searchRoutes');
 const viewReviews = require('./routes/viewReviews');
 const watchlistRoutes = require('./routes/watchlistRoutes');
-// const collectionsRoutes = require('./routes/collectionsRoutes');
+const collectionsRoutes = require('./routes/collectionsRoutes');
 const recommendationsRoutes = require('./routes/recomendations');
 
 app.use(express.json()); 
@@ -20,7 +20,7 @@ app.use(searchRoutes);
 app.use('/api', reviewsRoutes);
 app.use('/api/reviews', viewReviews);
 app.use('/api/watchlist', watchlistRoutes);
-// app.use('/api/collections', collectionsRoutes);
+app.use('/api/collections', collectionsRoutes);
 app.use('/api', recommendationsRoutes);
 
 // start the server

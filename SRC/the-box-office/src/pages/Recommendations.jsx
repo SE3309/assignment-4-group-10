@@ -6,8 +6,8 @@ const Recommendations = ({ currentUsername }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        console.log('Current Username:', currentUsername);
-
+        console.log('Current Username in Frontend:', currentUsername);
+        console.log(`Fetch URL: http://localhost:5000/api/recommendations/${currentUsername}`);
         if (!currentUsername) {
             setError('Username is not defined');
             return;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
 
@@ -12,6 +12,31 @@ const Home = ({ username }) => {
   const [rating, setRating] = useState("");
   const [releaseStartDate, setReleaseStartDate] = useState(""); 
   const [releaseEndDate, setReleaseEndDate] = useState("");
+  const [recommendations, setRecommendations] = useState([]);
+  const [error, setError] = useState(null);
+
+
+  useEffect(() => {
+    // Fetch recommendations when the component mounts
+    const fetchRecommendations = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/recommendations/${username}`
+        );
+        if (!response.ok) {
+          throw new Error(`Error fetching recommendations: ${response.statusText}`);
+        }
+        const data = await response.json();
+        setRecommendations(data);
+      } catch (err) {
+        console.error("Fetch error:", err.message);
+        setError(err.message);
+      }
+    };
+    if (username) {
+      fetchRecommendations();
+    }
+  }, [username]);
 
   const handleSearchBar = async () => {
     try {
@@ -314,16 +339,7 @@ const Home = ({ username }) => {
           </nav>
         </div>
 
-        {/* Main Panel */}
-        <div className="main-panel">
-          <div className="recommendations">
-            <h2>Personalized Recommendations</h2>
-            <div className="recommendations-content">
-              {/* Add dynamic content here */}
-              
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   );
