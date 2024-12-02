@@ -1,28 +1,29 @@
 .welcome-container {
     padding: 20px;
     font-family: Arial, sans-serif;
-    color: #f4f4f4; /* Text color changed to light */
-    background-color: #1c1c1c; /* Darker background */
+    color: #f4f4f4; 
+    background-color: #1c1c1c; 
   }
   
   .welcome-section {
     text-align: center;
     margin-bottom: 30px;
+    background-color: #2a2a2a;
   }
   
   .welcome-section h1 {
     font-size: 2.5rem;
-    color: #28a745; /* Keep green for contrast */
+    color: #28a745; 
   }
   
   .welcome-section p {
     font-size: 1.2rem;
     margin-top: 10px;
-    color: #e0e0e0; /* Light gray for readability */
+    color: #e0e0e0;
   }
   
   .about-section {
-    background-color: #333333; /* Slightly lighter dark background for contrast */
+    background-color: #333333; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
@@ -31,17 +32,17 @@
   
   .about-section h2 {
     font-size: 2rem;
-    color: #1e90ff; /* Light blue for titles */
+    color: #1e90ff; 
   }
   
   .about-section p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #dcdcdc; /* Lighter gray */
+    color: #dcdcdc; 
   }
   
   .recent-movies-section {
-    background-color: #333333; /* Consistent with About Section */
+    background-color: #333333; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
@@ -49,7 +50,7 @@
   
   .recent-movies-section h2 {
     font-size: 2rem;
-    color: #ff6347; /* Light red-orange for section header */
+    color: #ff6347; 
   }
   
   .recent-movies-list {
@@ -60,7 +61,7 @@
   }
   
   .movie-card {
-    background-color: #444444; /* Darker card background */
+    background-color: #444444; 
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -76,13 +77,13 @@
   
   .movie-card h3 {
     font-size: 1.2rem;
-    color: #ffffff; /* White text for titles */
+    color: #ffffff; 
     margin-bottom: 10px;
   }
   
   .movie-card p {
     font-size: 0.9rem;
-    color: #e0e0e0; /* Light gray text for details */
+    color: #e0e0e0; 
     margin: 5px 0;
   }
   
