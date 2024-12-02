@@ -10,6 +10,8 @@ import Reviews from './pages/Reviews';
 import Watchlist from './pages/Watchlist';
 import Collections from './pages/Collections';
 import Recommendations from './pages/Recommendations';
+import Profile from './pages/Profile';
+import FindFriends from './pages/FindFriends';
 
 const App = () => {
   return (
@@ -24,8 +26,9 @@ const App = () => {
         <Route path="/reviews" element={<Reviews username="currentUsername"/>} />
         <Route path="/watchlist" element={<Watchlist />} />
         <Route path="/collections" element={<Collections />} />
-        <Route path="/recommendations" element={<Recommendations username="aadesspb" />} />
-
+        <Route path="/recommendations" element={<Recommendations username="currentUsername" />} />
+        <Route path="/profile" element={<Profile username = "currentUsername" />} />
+        <Route path="/FindFriends" element={<FindFriends />} />
       </Routes>
     </Router>
   );

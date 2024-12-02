@@ -288,9 +288,11 @@ const Home = ({ username }) => {
       <div className="main-content">
         {/* Left Panel */}
         <div className="left-panel">
-          <div className="profile-section">
-            <button className="profile-btn">Profile</button>
-          </div>
+        <div className="profile-section">
+        <Link to="/profile">
+          <button className="profile-btn">Profile</button>
+        </Link>
+</div>
           <nav className="nav-links">
             <Link to="/ratemovie" className="nav-item">
               Rate A Movie

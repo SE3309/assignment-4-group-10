@@ -1,0 +1,99 @@
+/* Profile Page Container */
+.profile-container {
+    margin: 20px auto;
+    padding: 20px;
+    padding-top: 150px; /* Space for the navbar */
+    padding-bottom: 50px; /* Extra padding at the bottom */
+    background-color: #edebeb;
+    border-radius: 10px;
+    width: 800px;
+    border: 1px solid #b0b0b0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    overflow-y: auto; /* Scroll if content exceeds the viewport */
+    min-height: 100vh; /* Ensure full viewport height minus navbar */
+    box-sizing: border-box; /* Include padding and border in height calculation */
+}
+
+  
+  /* Profile Header */
+  .profile-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+  
+  /* Section Styling */
+  section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border: 1px solid #b0b0b0;
+  }
+  
+  section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #28a745;
+  }
+  
+  /* List Styling */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #fff;
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  ul li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Follower Section */
+  .followers-section ul li {
+    background-color: #adc0b1;
+    color: #ffffff;
+    border: 1px solid #28a745;
+  }
+  
+  .followers-section ul li:hover {
+    background-color: #28a745;
+  }
+  
+  /* Watchlist Section */
+  .watchlist-section ul li {
+    background-color: #adc0b1;
+    color: #ffffff;
+  }
+  
+  /* Collections Section */
+  .collections-section ul li {
+    background-color: #edebeb;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 900px) {
+    .profile-container {
+      width: 100%;
+      margin: 10px;
+    }
+  
+    section {
+      padding: 15px;
+    }
+  }
+  

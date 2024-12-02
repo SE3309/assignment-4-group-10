@@ -1,0 +1,154 @@
+/* Container Styles */
+/* Container Styles */
+.find-friends-container {
+    max-width: 600px;
+    margin: 50px auto; /* Adds space at the top and centers the container */
+    padding: 20px;
+    background-color: #edebeb;
+    border-radius: 10px;
+    border: 1px solid #b0b0b0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    box-sizing: border-box; /* Ensures padding is included in width/height calculations */
+  }
+  
+  /* Header */
+  .find-friends-container h1 {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+  
+  /* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: left;
+    margin-bottom: 20px;
+    gap: 10px; /* Ensures even spacing between input and button */
+    width: 100%; /* Ensures the search bar fits within the container */
+    box-sizing: border-box; /* Includes padding and border in width calculation */
+    overflow: hidden; /* Prevents children from overflowing */
+    margin: 0;
+  }
+  
+  /* Search Bar Input */
+  .search-bar input {
+    flex: 1; /* Ensures the input field takes available space within the flexbox */
+    padding: 10px;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Prevents padding from affecting the width */
+    min-width: 0; /* Ensures the input doesn't overflow the parent */
+    max-width: 100%; /* Prevents the input from exceeding the container */
+  }
+  
+  /* Search Bar Button */
+  .search-bar button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  
+  .search-bar button:disabled {
+    background-color: #a6a6a6;
+    cursor: not-allowed;
+  }
+  
+  .search-bar button:hover:not(:disabled) {
+    background-color: #1e7c34; /* Darker green on hover */
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Search Results */
+  .search-results ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .user-item:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  .user-item span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user-item button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .user-item button:hover {
+    background-color: #1e7c34;
+  }
+  
+  /* No Results Message */
+  .search-results p {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .find-friends-container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .search-bar input {
+      font-size: 0.9rem;
+    }
+  
+    .search-bar button {
+      font-size: 0.9rem;
+    }
+  
+    .user-item span {
+      font-size: 0.9rem;
+    }
+  
+    .user-item button {
+      font-size: 0.8rem;
+    }
+  }
+  
